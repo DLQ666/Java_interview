@@ -45,10 +45,10 @@ public class LRUCacheDemo2 {
 
         //2.2 添加到头
         public void addHead(Node<k, v> node) {
-            node.next = tail;
+            node.next = head.next;
             node.prev = head;
+            head.next.prev = node;
             head.next = node;
-            tail.prev = node;
         }
 
         //2.3 删除节点
